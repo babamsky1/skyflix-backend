@@ -13,6 +13,7 @@ urlpatterns = [
     path('tv/trending/', views.trending_tv, name='trending_tv'),
     path('tv/top-rated/', views.top_rated_tv, name='top_rated_tv'),
     path('tv/<int:tv_id>/', views.tv_detail, name='tv_detail'),
+    path('tv/<int:tv_id>/episodes/', views.tv_episodes, name='tv_episodes'),
     path('tv/<int:tv_id>/videos/', views.tv_videos, name='tv_videos'),
     path('tv/<int:tv_id>/similar/', views.similar_tv, name='similar_tv'),
     path('genres/movies/', views.movie_genres, name='movie_genres'),

@@ -235,6 +235,16 @@ def movie_stream(request, movie_id):
 
 
 @api_view(['GET'])
+def tv_episodes(request, tv_id):
+    """Get episode list for a TV show season."""
+    season = request.GET.get('season', '1')
+    data, error = tmdb_get(f'/tv/{tv_id}/season/{season}')
+    if error:
+        return Response({'error': error}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+    return Response(data)
+
+
+@api_view(['GET'])
 def tv_stream(request, tv_id):
     """Get streaming embed URL for a TV show."""
     provider = request.GET.get('provider', 'vidsrc')
