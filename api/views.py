@@ -224,6 +224,18 @@ def movie_stream(request, movie_id):
         embed_url = f"{settings.VIDSRC_BASE_URL}/{movie_id}"
     elif provider == 'vidsrc_to':
         embed_url = f"{settings.VIDSRC_TO_BASE_URL}/{movie_id}"
+    elif provider == 'embed2':
+        embed_url = f"{settings.EMBED2_BASE_URL}/{movie_id}"
+    elif provider == 'vidsrc_me':
+        embed_url = f"{settings.VIDSRC_ME_BASE_URL}/{movie_id}"
+    elif provider == 'movies123':
+        embed_url = f"{settings.MOVIES123_BASE_URL}/{movie_id}"
+    elif provider == 'putlocker':
+        embed_url = f"{settings.PUTLOCKER_BASE_URL}/{movie_id}"
+    elif provider == 'solarmovie':
+        embed_url = f"{settings.SOLARMOVIE_BASE_URL}/{movie_id}"
+    elif provider == 'fmovies':
+        embed_url = f"{settings.FMOVIES_BASE_URL}/{movie_id}"
     else:
         embed_url = f"{settings.VIDSRC_BASE_URL}/{movie_id}"
     
@@ -257,6 +269,16 @@ def tv_stream(request, tv_id):
         embed_url = f"{settings.VIDSRC_TO_BASE_URL.replace('/movie', '/tv')}/{tv_id}/{season}/{episode}"
     elif provider == 'embed2':
         embed_url = f"{settings.EMBED2_BASE_URL}/{tv_id}/{season}/{episode}"
+    elif provider == 'vidsrc_me':
+        embed_url = f"{settings.VIDSRC_ME_BASE_URL.replace('/movie', '/tv')}/{tv_id}/{season}/{episode}"
+    elif provider == 'movies123':
+        embed_url = f"{settings.MOVIES123_BASE_URL.replace('/movie', '/tv')}/{tv_id}/{season}/{episode}"
+    elif provider == 'putlocker':
+        embed_url = f"{settings.PUTLOCKER_BASE_URL.replace('/movie', '/tv')}/{tv_id}/{season}/{episode}"
+    elif provider == 'solarmovie':
+        embed_url = f"{settings.SOLARMOVIE_BASE_URL.replace('/movie', '/tv')}/{tv_id}/{season}/{episode}"
+    elif provider == 'fmovies':
+        embed_url = f"{settings.FMOVIES_BASE_URL.replace('/movie', '/tv')}/{tv_id}/{season}/{episode}"
     else:
         embed_url = f"{settings.VIDSRC_BASE_URL.replace('/movie', '/tv')}/{tv_id}/{season}/{episode}"
     
